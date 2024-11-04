@@ -43,20 +43,21 @@ Below is an image of a volumetric capture setup using six Kinect 4 Azure sensors
 ![Capture System Setup](./assets/capture_system.png)
 
 #### Configure Software
-En cada uno de los equipos tanto Maestro y Esclavos debe ser instalado:
+On each device, both Master and Slaves, install the following:
+
 * [Python 3.10](https://www.python.org/downloads/release/python-3100/)
 * [Azure-Kinect-Sensor-SDK](https://github.com/microsoft/Azure-Kinect-Sensor-SDK/tree/develop)
 
-En una 
+In a terminal, run the command:
 
 ```bash
 # Comando en bash para linux
 python3  Capture_Multi.py
 ```
-Este comando hara que el sistema inicie la captura simultanea de todos los sensores, se crearan N carpetas con los nombre K1, K2, ..., KN y dentro de ellas se crearan los folder color y depth que contienen las imagenes tando de color como de profundidad por cámara
+This command will start simultaneous capture from all sensors. It will create N folders named K1, K2, ..., KN, each containing the folders color_images and depth_images, which store the color and depth images from each camera.
 
 ```bash
-Proyecto
+Project
 ├── Capture_Multi.py
 ├── k01                  #Folder camera k01           
 │   ├── color            #Folder to color images 
@@ -115,7 +116,19 @@ Proyecto
 ```
 ### Module 2: Calibration and Adjustment
 
+The calibration process involves finding the coordinates or transformation between cameras. Before starting any event capture, follow these steps:
+
+    A person should enter the area covered by the cameras, extending their arms and legs in a star shape while wearing a hat and clothing in a color that contrasts with black and includes selectable markers.
+    Slowly rotate with arms and legs extended in front of each camera, spending 2 to 3 seconds facing each one.
+
+See calibration process video:
+
+[![Calibration and Capture Process with TriDO](https://img.youtube.com/vi/UlgHN4ABupE/0.jpg)](https://www.youtube.com/watch?v=UlgHN4ABupE)
+
+
 ### Module 3: Global 3D Reconstruction
+
+
 
 ### Module 4: Visualization and Export
 

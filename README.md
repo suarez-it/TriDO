@@ -128,9 +128,34 @@ See calibration process video:
 
 ### Module 3: Global 3D Reconstruction
 
+As a result of the calibration process, N transformation matrices are obtained, each relating the position of one camera to another. These matrices form a chain of relationships that enable a global reconstruction, taking Camera 1 (Master) as the reference point.
+
+To start, run the following command in a terminal:
+
+
+```bash
+# Comando en bash para linux
+python3  Generate_volumetric_Video.py
+```
+
+This command will generate a unified point cloud for each frame, which can be visualized with any point cloud viewing software, such as CloudCompare.
+
+To view the video in .ply point cloud format generated from this process, execute the following command in a terminal. This will sequentially display each point cloud frame:
+
+```bash
+# Comando en bash para linux
+python3  06_Playback.py
+```
 
 
 ### Module 4: Visualization and Export
 
+From the previous module, N point clouds are obtained for each captured frame. To use these point clouds in a game engine like Unity, they must be transformed into assets compatible with that engine.
+
+For the TriDO project, the default game engine is Unity, and this module is designed specifically to export assets for use in Unity.
 
 
+
+INFORMATION
+
+suarez@lidarit.com
